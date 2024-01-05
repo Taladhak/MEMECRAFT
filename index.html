@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memecraft</title>
+
+    <link rel="stylesheet" href="app.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+<header id="memeTitle">
+    <h1>MEMECRAFT</h1>
+    <p>Become the next meme king!</p>
+</header>
+
+
+<section id="memeBuild">
+
+    <form id="generator" method="post">
+        <input type="url" name="url" id="url" placeholder="Image URL">
+        <input type="file" name="image" id="imageInput" accept="image/png, image/jpeg">
+        <input type="text" name="topText" id="topText" placeholder="Top Text">
+        <input type="text" name="bottomText" id="bottomText" placeholder="Bottom Text">
+        <button type="submit" id="generateBtn">Generate Meme</button>
+    </form>
+
+    <!-- Container where memes will be dynamically inserted -->
+    <div id="meme">
+      
+        <div class="meme" style="position: relative;">
+            <canvas></canvas>
+            <div class="meme-text top-text" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%);">
+               
+            </div>
+            <div class="meme-text bottom-text" style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);">
+              
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
+

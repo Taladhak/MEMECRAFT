@@ -1,0 +1,133 @@
+/* Global body styling */
+body {
+    font-family: 'VT323', monospace, sans-serif;
+    color: hsl(124, 100%, 50%);
+    background: black;
+}
+
+/* Styling for the meme building section */
+#memeBuild {
+    border-radius: 10px;
+    border: dashed hsl(124, 100%, 50%);
+    padding: 1em;
+    margin: auto;
+    max-width: 800px; /* Set a max width for larger screens */
+}
+
+/* Styling for the meme title section */
+#memeTitle {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Styling for the meme generator form */
+#generator {
+    display: grid;
+    gap: 0.5em;
+    align-items: center; /* Align form elements vertically */
+}
+
+/* Styling for input fields */
+input, button {
+    padding: 10px;
+    border: 0.1rem solid hsl(124, 100%, 50%);
+    background-color: black;
+    color: hsl(124, 100%, 50%);
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: hsl(124, 100%, 30%);
+}
+
+/* Styling for the generate button */
+#generateBtn {
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 70%;
+    margin: 1em auto;
+}
+
+#generateBtn:hover {
+    background-color: hsl(124, 100%, 50%);
+    color: black;
+}
+
+/* Container for all memes */
+#meme {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribute space around items */
+    gap: 20px;
+}
+
+/* Individual meme container */
+.meme {
+    position: relative; /* Set position context for overlay elements */
+    width: 400px; /* Maximum width for meme container */
+    margin-bottom: 40px; /* Space below each meme */
+}
+
+/* Styling for the meme canvas */
+canvas {
+    width: 100%; /* Make canvas responsive */
+    max-width: 400px; /* Maximum width for canvas */
+    height: auto; /* Adjust height automatically */
+    border-radius: 10px;
+}
+
+/* Styling for meme text overlays */
+.meme-text {
+    position: absolute; /* Absolutely position the text over the canvas */
+    width: 100%; /* Full width of the parent .meme container */
+    left: 0; /* Align to the left edge of the parent */
+    text-align: center; /* Center-align the text */
+    font-size: 3em; /* Large text size for readability */
+    pointer-events: none; /* Ignore pointer events to allow interaction with the canvas below */
+    color: whitesmoke;
+}
+
+.top-text {
+    top: 10px; /* Position the top text at the top of the canvas */
+}
+
+.bottom-text {
+    bottom: 30px; /* Position the bottom text at the bottom of the canvas */
+    /* Increase bottom offset if necessary to account for the delete button's space */
+}
+
+/* Styling for delete buttons */
+.deleteBtn {
+    position: absolute; /* Position the delete button absolutely within the .meme container */
+    bottom: -40px; /* Position the button below the canvas */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Align the center of the button with the center of the canvas */
+    padding: 5px 10px;
+    background-color: hsl(0, 0%, 0%);
+    color: hsl(124, 100%, 50%);
+    border: 2px solid hsl(124, 100%, 50%);
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.deleteBtn:hover {
+    background-color: hsl(124, 100%, 50%);
+    color: black;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    #memeBuild, #generator {
+        padding: 10px;
+    }
+
+    #generator {
+        margin: 1em;
+        grid-template-columns: 1fr; /* Stack form elements on smaller screens */
+    }
+
+    .deleteBtn {
+        padding: 5px 15px;
+    }
+}
